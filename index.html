@@ -10,20 +10,20 @@
     <div id="contact_form">
         <form name="contact" action="">
           <fieldset>
-            <label for="paragraph" id="paragraph_label">Paragraph</label>
-            <input type="text" name="paragraph" id="paragraph" size="200" value="" class="text-input" />
+            <label for="paragraphInput" class="paragraphInput_label">Paragraph</label>
+            <textarea class="paragraphInput" placeholder="" rows="10" cols="60"></textarea>
           <!--  <label class="error" for="paragraph" id="paragraph_error">This field is required.</label> -->
               
-            <label for="charMinimum" id="charMinimum_label">Character Minimum</label>
-            <input type="text" name="charMinimum" id="charMinimum" size="5" value="" class="text-input" />
-         <!--   <label class="error" for="charMinimum" id="charMinimum_error">This field is required.</label> -->
+            <label for="minimumCharacterInput" class="minimumCharacterInput_label">Character Minimum</label>
+            <input type="text" name="minimumCharacterInput" class="minimumCharacterInput" size="5" value="" class="text-input" />
+         <!--   <label class="error" for="minimumCharacterInput" id="minimumCharacterInput_error">This field is required.</label> -->
               <br />
-            <input type="submit" name="submit" class="button" id="submit_btn" value="Send" />
+            <input type="submit" name="submit" class="button" id="submit_btn" value="Submit" />
           </fieldset>
         </form>
         </div>
-    <div class="paragraph">Paragraph: </div>
-    <div class="minimumCharactersLeft">Character Limit: </div>
+    <div class="paragraphDisplay">Paragraph: </div>
+    <div class="characterMinimumDisplay">Character Limit: </div>
     <div class = "answer">Answer: </div>
   <script src = "index.js"></script>
   </body>
