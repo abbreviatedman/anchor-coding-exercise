@@ -1,30 +1,45 @@
 <html>
-  <head>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous">
-    </script>
-  </head>
-  <body>
-    <div id="contact_form">
-        <form name="contact" action="">
-          <fieldset>
-            <label for="paragraphInput" class="paragraphInput_label">Paragraph</label>
-            <textarea class="paragraphInput" placeholder="" rows="10" cols="60"></textarea>
-          <!--  <label class="error" for="paragraph" id="paragraph_error">This field is required.</label> -->
-              
-            <label for="minimumCharacterInput" class="minimumCharacterInput_label">Character Minimum</label>
-            <input type="text" name="minimumCharacterInput" class="minimumCharacterInput" size="5" value="" class="text-input" />
-         <!--   <label class="error" for="minimumCharacterInput" id="minimumCharacterInput_error">This field is required.</label> -->
-              <br />
-            <input type="submit" name="submit" class="button" id="submit_btn" value="Submit" />
-          </fieldset>
-        </form>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="index.css" />
+  <script src="prefixfree.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="header row">
+      <h1 class="col">HEADER</h1>
+    </div>
+    <div class="form">
+      <form name="algo" action="" class="row">
+        <div class="col">
+          <label for="paragraphInput" class="paragraphInput_label strong">
+            Enter a paragraph here, or use the following example paragraph from the job listing.
+          </label>
+          <textarea
+            class="paragraphInput"
+            placeholder="If you want to jumpstart the process of talking to us about this role, heres a little challenge: write a program that outputs the largest set of characters that can be removed from this paragraph without letting its length drop below 50."
+            rows="10"
+            cols="60"></textarea>
         </div>
-    <div class="paragraphDisplay">Paragraph: </div>
-    <div class="characterMinimumDisplay">Character Limit: </div>
-    <div class = "answer">Answer: </div>
+        <div class="col">
+          <label for="minimumCharacterInput" class="minimumCharacterInput_label strong">Enter a minimum character count here, or use the following example count from the job listing.</label>
+          <input type="text" name="minimumCharacterInput" class="minimumCharacterInput" size="5" placeholder="50"/>
+          <label class="error" for="minimumCharacterInput" id="minimumCharacterInput_error" hidden>The Character Minimum must be greater than the number of characters in the paragraph!</label>
+        </div>
+        <div class="col">
+          <input type="submit" name="submit" class="button" id="submit_btn" value="Calculate" />
+        </div>
+      </form>
+    </div>
+    <div class="results row">
+      <div class="paragraphDisplay col"><p class="strong">Paragraph: </p></div>
+      <div class = "answer col"><p class="strong">Answer: </p></div>
+    </div>
+  </div>
   <script src = "index.js"></script>
-  </body>
+</body>
 </html>

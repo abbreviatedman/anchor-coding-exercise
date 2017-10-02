@@ -1,7 +1,7 @@
+var DEFAULT_PARAGRAPH = 'If you want to jumpstart the process of talking to us about this role, heres a little challenge: write a program that outputs the largest set of characters that can be removed from this paragraph without letting its length drop below 50.';
+var DEFAULT_MINIMUM_CHARACTER = 50;
+
 function subtractCharsFromParagraph(paragraph, minimumCharactersLeft) {
-  if (!paragraph.length) throw Error('No characters were passed in!')
-  if (paragraph.length < minimumCharactersLeft) throw Error('There must be at least' + minimumCharactersLeft + 'characters in the paragraph.');
-  
   var hash = {};
   for (var i = 0; i < paragraph.length; i++) {
     var char = paragraph[i];
@@ -23,7 +23,7 @@ function subtractCharsFromParagraph(paragraph, minimumCharactersLeft) {
     if (length >= minimumCharactersLeft) answer.push(currentChar);
   }
   
-  return answer;
+   return answer;
 }
 
 $(document).ready(function() {
@@ -37,28 +37,35 @@ $(document).ready(function() {
     
     var $paragraphInput = $('.paragraphInput');
     var $minimumCharacterInput = $('.minimumCharacterInput');
-    var paragraphContent = $paragraphInput.val();
-    var minimumCharacterContent = $minimumCharacterInput.val();
+    var paragraphContent = $paragraphInput.val() || DEFAULT_PARAGRAPH;
+    var minimumCharacterContent = $minimumCharacterInput.val() || DEFAULT_MINIMUM_CHARACTER;
+    if (paragraphContent.length <= minimumCharacterContent) {
+      var $minimumCharacterInput_error = $('label#minimumCharacterInput_error');
+      var $minimumCharacterInput = $('input.minimumCharacterInput');
+      $minimumCharacterInput_error.show();
+      $minimumCharacterInput.focus();
+      return false;
+    }
     
     var answer = subtractCharsFromParagraph(paragraphContent, minimumCharacterContent);
     
     var answerText = '';
     if (answer.length) answerText += ("['" + answer[0] + "'");
-    else answerText += '[';
     
     for (var i = 1; i < answer.length; i++) {
       answerText += ", '"
       answerText += answer[i];
       answerText += "'"
     }
+    
     answerText += ']'
+    
+    if (!answer.length) answerText = "There was no character that could be removed without going under the minimum threshold.";
     
     var $answer = $(".answer");
     $answer.append(document.createTextNode(answerText));
     
     var $paragraphDisplay = $('.paragraphDisplay');
     $paragraphDisplay.append(document.createTextNode(paragraphContent)); 
-    var $characterMinimumDisplay = $('.characterMinimumDisplay');
-    $characterMinimumDisplay.append(document.createTextNode(minimumCharacterContent));
   });
 });

@@ -1,0 +1,59 @@
+body{
+  font: 500 18px/1.5 Georgia, serif;
+  line-height: 1.6;
+}
+
+.row {
+  display: flex;
+  padding: 5px;
+  /* align-items: center; */
+}
+
+@media (max-width: 600px) {
+  .row {
+    display: block;
+  }
+}
+
+.col {
+  margin: 5px;
+  flex: 1;
+}
+
+* {
+  /* border: 4px dotted; */
+}
+
+.app {
+  /* display: flex; */
+  /* height: 1000px; */
+}
+
+.header {
+}
+
+.results {
+  /* display: flex; */
+}
+
+.results div {
+}
+
+p, h1 {
+  /* flex: 1;
+  max-width: 700px;
+  width: 100%; */
+}
+
+h1, h2, h3, h4 {
+  /* flex: 1; */
+  font: bold Helvetica;
+}
+
+.error {
+  color: red;
+}
+
+.strong {
+  font-weight: bold;
+}
