@@ -62,10 +62,13 @@ $(document).ready(function() {
     
     if (!answer.length) answerText = "There was no character that could be removed without going under the minimum threshold.";
     
-    var $answer = $(".answer");
-    $answer.append(document.createTextNode(answerText));
+    var $answerOutput = $(".answerOutput");
+    // var $answerTextNode = document.createTextNode("Answer: " + answerText);
+    $answerOutput.text(answerText);
     
-    var $paragraphDisplay = $('.paragraphDisplay');
-    $paragraphDisplay.append(document.createTextNode(paragraphContent)); 
+    var $paragraphOutput = $('.paragraphOutput');
+    // var $paragraphTextNode = document.createTextNode("Paragraph: " + paragraphContent);
+    
+    $paragraphOutput.text(paragraphContent); 
   });
 });
