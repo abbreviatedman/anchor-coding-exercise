@@ -20,7 +20,7 @@
     </div>
     <div class="form">
       <form name="algo" action="" class="row">
-        <div class="col">
+        <div class="col paragraphArea">
           <label for="paragraphInput" class="paragraphInput_label strong">
             Enter a paragraph here, or use the following example paragraph from the job listing.
           </label>
@@ -30,12 +30,12 @@
             rows="10"
             cols="60"></textarea>
         </div>
-        <div class="col">
+        <div class="col minimumCharacterArea">
           <label for="minimumCharacterInput" class="minimumCharacterInput_label strong">Enter a minimum character count here, or use the following example count from the job listing.</label>
           <input type="text" name="minimumCharacterInput" class="minimumCharacterInput" size="5" placeholder="50"/>
           <label class="error" for="minimumCharacterInput" id="minimumCharacterInput_error" hidden>The Character Minimum must be greater than the number of characters in the paragraph!</label>
         </div>
-        <div class="col">
+        <div class="col submitButton">
           <input type="submit" name="submit" class="button" id="submit_btn" value="Calculate" />
         </div>
       </form>

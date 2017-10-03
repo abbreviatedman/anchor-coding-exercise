@@ -15,6 +15,10 @@ body {
   }
 }
 
+.form {
+  border-bottom: 3px solid black;
+}
+
 .col {
   margin: 5px;
   flex: 1;
@@ -22,9 +26,6 @@ body {
 
 .github {
   margin-bottom: 30px;
-}
-
-.results p {
 }
 
 span {
@@ -39,36 +40,6 @@ span {
 
 .underline {
   text-decoration: underline;
-}
-
-* {
-  /* border: 4px dotted; */
-}
-
-.app {
-  /* display: flex; */
-  /* height: 1000px; */
-}
-
-.header {
-}
-
-.results {
-  /* display: flex; */
-}
-
-.results div {
-}
-
-p, h1 {
-  /* flex: 1;
-  max-width: 700px;
-  width: 100%; */
-}
-
-h1, h2, h3, h4 {
-  /* flex: 1; */
-  font: bold Helvetica;
 }
 
 .error {
