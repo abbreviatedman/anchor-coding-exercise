@@ -85,7 +85,7 @@ $(document).ready(function() {
       var $charactersRemainingOutput = $('.charactersRemainingOutput');
       $charactersRemainingOutput.text(remaining);
       
-      timer = setTimeout(interval, 500);
+      timer = setTimeout(interval, 1500);
     }
   });
 });
