@@ -9,7 +9,7 @@ $(document).ready(function() {
   $button.click(function (event) {
     event.preventDefault();
     $error.hide();
-    reset();
+    timer = reset(timer);
     
     var $paragraphInput = $('.paragraphInput');
     var $minimumCharacterInput = $('.minimumCharacterInput');
@@ -66,7 +66,10 @@ $(document).ready(function() {
     timer = setTimeout(interval, 3000);
       
     function interval() {
-      if (!answer.length) return;
+      if (!answer.length) {
+        addUnderlinesToRemainingChars();
+        return;
+      }
       var letter = answer.shift();
       var id = getId(letter);
       
@@ -85,46 +88,5 @@ $(document).ready(function() {
       timer = setTimeout(interval, 500);
     }
   });
-  
-  
-    
-  function reset() {
-    if (timer) {
-      clearTimeout(timer);
-      timer = 0;
-    }
-    $('.paragraphOutput').empty();
-    $('.charactersRemainingOutput').empty();
-    $('.answerOutput').empty();
-  }
-  
-  function subtractCharsFromParagraph(paragraph, minimumCharactersLeft) {
-    var hash = {};
-    for (var i = 0; i < paragraph.length; i++) {
-      var char = paragraph[i];
-      if (!(char in hash)) hash[char] = 0;
-      hash[char]++;
-    }
-    
-    var keys = Object.keys(hash);
-    var charsInDescendingOrder = keys.sort(function(key1, key2) {
-      return hash[key2] - hash[key1];
-    });
-    
-    var length = paragraph.length;
-    var answer = [];
-    while (length >= minimumCharactersLeft && charsInDescendingOrder.length) {
-      var currentChar = charsInDescendingOrder.pop();
-      var currentCount = hash[currentChar];
-      length -= currentCount;
-      if (length >= minimumCharactersLeft) answer.push(currentChar);
-    }
-     
-    return answer;
-  }
-  
-  function getId(letter) {
-    return letter === ' ' ? 'sp' : letter
-  }
 });
 

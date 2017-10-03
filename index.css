@@ -37,6 +37,10 @@ span {
   color: red;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 * {
   /* border: 4px dotted; */
 }
