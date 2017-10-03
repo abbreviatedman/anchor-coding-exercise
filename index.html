@@ -5,13 +5,18 @@
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous">
   </script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <link rel="stylesheet" href="index.css" />
   <script src="prefixfree.min.js"></script>
 </head>
 <body>
   <div class="app">
     <div class="header row">
-      <h1 class="col">HEADER</h1>
+      <h1 class="col">Anchor Job Listing Coding Exercise</h1>
+      <p>by Colin Jaffe</p>
+    </div>
+    <div class="github">
+      <a href = "https://github.com/abbreviatedman/anchor-coding-exercise" target="blank"><img src="github.ico"/></a>
     </div>
     <div class="form">
       <form name="algo" action="" class="row">
@@ -40,11 +45,16 @@
         <p class="strong">Paragraph: </p>
         <p class="paragraphOutput"></p>
       </div>
+      <div class="charactersRemaining col">
+        <span class="strong">Characters Remaining: </span>
+        <span class="charactersRemainingOutput"></span>
+      </div>
       <div class = "answerDisplaySection col">
         <p class="strong">Answer: </p>
         <p class="answerOutput"></p>
       </div>
     </div>
+    <svg width="960" height="500"></svg>
   </div>
   <script src = "index.js"></script>
 </body>
